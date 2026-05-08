@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "collective"
+version = "0.1.0"
+description = "Shared memory and knowledge layer for agent societies."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "click>=8.0",
+  "fastapi>=0.100",
+  "networkx>=3.0",
+  "pydantic>=2.0",
+  "uvicorn>=0.22",
+]
+
+[project.scripts]
+collective = "collective.cli:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
